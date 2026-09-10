@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
       {badge && (
-        <p className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent">
+        <p className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-medium">
           <span aria-hidden="true">🏆</span>
           {badge}
         </p>
@@ -32,13 +32,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </dl>
 
       <h4 className="mt-6 text-sm font-semibold text-muted">한 일</h4>
-      <ul className="mt-2 list-disc space-y-1.5 pl-5 leading-7 marker:text-accent">
+      <ul className="mt-2 list-disc space-y-1.5 pl-5 leading-7 marker:text-muted">
         {tasks.map((task) => (
           <li key={task}>{task}</li>
         ))}
       </ul>
 
-      <blockquote className="mt-6 border-l-4 border-accent pl-4 leading-7">
+      <blockquote className="mt-6 border-l-2 border-border pl-4 leading-7">
         <p className="mb-1 text-sm font-semibold text-muted">배운 점</p>
         <p>{lesson}</p>
       </blockquote>

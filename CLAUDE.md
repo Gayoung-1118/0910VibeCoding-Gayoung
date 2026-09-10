@@ -19,7 +19,8 @@
 
 - **Next.js 16** (App Router) + React 19
 - **TypeScript**
-- **Tailwind CSS v4** — 색은 `app/globals.css`의 CSS 변수 토큰(`background`, `foreground`, `muted`, `border`, `card`, `accent`, `accent-soft`, `accent-foreground`)으로 관리하고, 다크 모드는 시스템 설정을 따른다
+- **Tailwind CSS v4** — 색은 `app/globals.css`의 CSS 변수 토큰(`background`, `foreground`, `muted`, `border`, `card`, `accent`, `accent-foreground`)으로 관리한다
+- 디자인: 검은 배경의 단일 다크 테마 (라이트 모드 없음). 흑백 위주의 깔끔한 스타일로, 포인트 색은 흰색이다
 - 폰트는 시스템 폰트 스택을 쓴다 (`next/font` 사용 안 함)
 
 ## 명령어

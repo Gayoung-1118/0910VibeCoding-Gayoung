@@ -61,8 +61,8 @@ export default function Home() {
         </Section>
 
         <Section id="study" eyebrow={study.name} title="이번 스터디에서">
-          <div className="rounded-2xl bg-accent-soft p-6 sm:p-8">
-            <p className="text-sm font-semibold text-accent">
+          <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <p className="text-sm font-semibold text-muted">
               만들어보고 싶은 것
             </p>
             <h3 className="mt-2 text-xl font-bold">{study.wantToBuild.title}</h3>
@@ -77,7 +77,7 @@ export default function Home() {
               <li key={goal} className="flex gap-3 leading-7">
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground"
+                  className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border border-border text-xs font-semibold text-muted"
                 >
                   {index + 1}
                 </span>
