@@ -1,3 +1,4 @@
+import Label from "@/components/Label";
 import type { Project } from "@/types/profile";
 
 type ProjectCardProps = {
@@ -9,38 +10,38 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     project;
 
   return (
-    <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+    <article>
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <h3 className="font-serif text-[26px] font-bold">{title}</h3>
+        <span className="text-xs text-muted">{subtitle}</span>
+      </div>
       {badge && (
-        <p className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-medium">
-          <span aria-hidden="true">🏆</span>
-          {badge}
+        <p className="mt-2.5 font-display text-muted italic">
+          <span aria-hidden="true">🏆</span> {badge}
         </p>
       )}
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-1 text-muted">{subtitle}</p>
-      <p className="mt-4 leading-7">{summary}</p>
+      <p className="mt-4 leading-[1.8]">{summary}</p>
 
-      <dl className="mt-6 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-[3rem_1fr] sm:gap-y-2">
-        <dt className="font-semibold text-muted">역할</dt>
+      <dl className="mt-[18px] grid grid-cols-[64px_1fr] gap-x-3.5 gap-y-1.5 text-sm">
+        <dt className="text-muted">역할</dt>
         <dd>{role}</dd>
         {result && (
           <>
-            <dt className="mt-2 font-semibold text-muted sm:mt-0">결과</dt>
+            <dt className="text-muted">결과</dt>
             <dd>{result}</dd>
           </>
         )}
       </dl>
 
-      <h4 className="mt-6 text-sm font-semibold text-muted">한 일</h4>
-      <ul className="mt-2 list-disc space-y-1.5 pl-5 leading-7 marker:text-muted">
+      <Label className="mt-[22px] mb-2">한 일</Label>
+      <ul className="list-disc pl-4 leading-[1.85]">
         {tasks.map((task) => (
           <li key={task}>{task}</li>
         ))}
       </ul>
 
-      <blockquote className="mt-6 border-l-2 border-border pl-4 leading-7">
-        <p className="mb-1 text-sm font-semibold text-muted">배운 점</p>
-        <p>{lesson}</p>
+      <blockquote className="mt-[22px] border-l-2 border-rule pl-4 font-serif text-[17px] leading-[1.8] text-quote">
+        {lesson}
       </blockquote>
     </article>
   );

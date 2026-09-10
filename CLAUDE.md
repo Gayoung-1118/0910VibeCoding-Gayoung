@@ -19,9 +19,11 @@
 
 - **Next.js 16** (App Router) + React 19
 - **TypeScript**
-- **Tailwind CSS v4** — 색은 `app/globals.css`의 CSS 변수 토큰(`background`, `foreground`, `muted`, `border`, `card`, `accent`, `accent-foreground`)으로 관리한다
-- 디자인: 검은 배경의 단일 다크 테마 (라이트 모드 없음). 흑백 위주의 깔끔한 스타일로, 포인트 색은 흰색이다
-- 폰트는 시스템 폰트 스택을 쓴다 (`next/font` 사용 안 함)
+- **Tailwind CSS v4** — 색은 `app/globals.css`의 CSS 변수 토큰(`background`, `foreground`, `muted`, `quote`, `rule`, `rule-soft`)으로 관리한다
+- 디자인: Claude Design의 "Profile Ivory" 시안을 따른다. 아이보리 배경의 단일 라이트 테마이고, 카드 없이 괘선으로 구분하는 에디토리얼 스타일이다
+- 폰트 토큰 `font-sans` / `font-serif` / `font-display`:
+  - 본문 Pretendard — Google Fonts에 없어서 `app/layout.tsx`에서 jsDelivr CDN 스타일시트로 불러온다
+  - 제목·인용 Gowun Batang, 섹션 번호·이탤릭 라벨 Instrument Serif — `next/font/google`로 불러온다
 
 ## 명령어
 
@@ -37,10 +39,11 @@ npm run lint   # ESLint
 data/profile.json      콘텐츠 전부 (유일한 콘텐츠 소스)
 types/profile.ts       JSON 구조 타입
 lib/profile.ts         getProfile() — 데이터 읽는 곳은 여기 하나
-app/layout.tsx         html/body, 메타데이터
+app/layout.tsx         html/body, 메타데이터, 폰트
 app/page.tsx           섹션 배치
-app/globals.css        Tailwind + 색 토큰
-components/            Hero, Section, ProjectCard, TagList
+app/globals.css        Tailwind + 색·폰트 토큰
+components/            Hero, Section, ProjectCard, Label
+DESIGN.md              화면 구성·색·글꼴 설명 (코드 없이)
 ```
 
 ## 데이터

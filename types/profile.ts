@@ -21,6 +21,7 @@ export type SkillGroup = {
 
 export type Profile = {
   name: string;
+  eyebrow: string;
   school: string;
   major: string;
   year: string;

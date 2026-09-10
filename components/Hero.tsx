@@ -2,11 +2,12 @@ import type { Profile } from "@/types/profile";
 
 type HeroProps = Pick<
   Profile,
-  "name" | "school" | "major" | "year" | "tagline" | "links"
+  "name" | "eyebrow" | "school" | "major" | "year" | "tagline" | "links"
 >;
 
 export default function Hero({
   name,
+  eyebrow,
   school,
   major,
   year,
@@ -14,27 +15,33 @@ export default function Hero({
   links,
 }: HeroProps) {
   return (
-    <header className="pt-20 pb-12 sm:pt-28 sm:pb-16">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{name}</h1>
-      <p className="mt-3 font-medium text-accent">
-        {[school, major, year].join(" · ")}
+    <header>
+      <p className="mb-[18px] font-display text-[17px] text-muted italic">
+        {eyebrow}
       </p>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{tagline}</p>
-      <ul className="mt-8 flex flex-wrap gap-3">
-        {links.map((link) => (
-          <li key={link.url}>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-1.5 rounded-full bg-accent px-5 font-semibold text-accent-foreground transition-opacity hover:opacity-90"
-            >
-              {link.label}
-              <span aria-hidden="true">↗</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <h1 className="font-serif text-5xl leading-none font-bold tracking-[-0.01em] sm:text-[60px]">
+        {name}
+      </h1>
+      <div className="mt-[22px] flex flex-wrap items-baseline gap-3.5 border-t border-foreground pt-[18px] text-sm font-semibold">
+        <p>{[school, major, year].join(" · ")}</p>
+        <ul className="ml-auto flex gap-4">
+          {links.map((link) => (
+            <li key={link.url}>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-foreground pb-0.5"
+              >
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="mt-8 max-w-[26em] font-serif text-xl leading-[1.75] sm:text-[22px]">
+        {tagline}
+      </p>
     </header>
   );
 }
